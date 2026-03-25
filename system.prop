@@ -1,0 +1,58 @@
+# Audio
+ro.vendor.qti.va_aosp.support=1
+
+# Assertive display
+ro.qcom.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/ad_calib.cfg
+ro.vendor.display.ad=1
+ro.vendor.display.sensortype=2
+
+# Bluetooth
+bt.max.hfpclient.connections=1
+qcom.bluetooth.soc=cherokee
+vendor.bluetooth.soc=cherokee
+
+# Charger
+ro.charger.enable_suspend=true
+
+# Color
+persist.sys.colorgamut.mode=1
+ro.sys.colorgamut.supported=true
+vendor.display.enable_default_color_mode=1
+
+# Display
+ro.qualcomm.cabl=0
+
+# DPM
+persist.vendor.dpm.feature=1
+
+# Graphics
+persist.demo.hdmirotationlock=false
+persist.hwc.enable_vds=1
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_virtual_display_dimension=4096
+
+# HDR
+sdm.disable_hdr_lut_gen=1
+vendor.vidc.enc.disable.pq=true
+
+# Keyprovd
+persist.keyprovd.fido.prov=false
+persist.keyprovd.fido.version=0
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# NFC
+ro.nfc.port=I2C
+
+# Radio
+DEVICE_PROVISIONED=1
+ril.subscription.types=NV,RUIM
+
+# TimeService
+persist.timed.enable=true
+
+# Wireless display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
