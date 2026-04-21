@@ -102,6 +102,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
+# OMX
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
