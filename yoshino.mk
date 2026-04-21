@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.qti
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
