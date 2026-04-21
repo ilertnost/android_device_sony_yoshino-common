@@ -203,6 +203,7 @@ AB_OTA_UPDATER := false
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
+    libwifi-hal-ctrl \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
