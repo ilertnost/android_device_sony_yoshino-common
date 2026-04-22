@@ -184,6 +184,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor:32
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.qcom.msim.sh \
+    init.qcom.sh \
+    init.qcom.rc \
+    init.qcom.recovery.rc \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
