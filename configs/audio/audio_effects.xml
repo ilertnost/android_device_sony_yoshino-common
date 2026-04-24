@@ -30,9 +30,6 @@
     <libraries>
         <library name="bundle" path="libbundlewrapper.so"/>
         <library name="reverb" path="libreverbwrapper.so"/>
-        <library name="qcbassboost" path="libqcbassboost.so"/>
-        <library name="qcvirt" path="libqcvirt.so"/>
-        <library name="qcreverb" path="libqcreverb.so"/>
         <library name="visualizer_sw" path="libvisualizer.so"/>
         <library name="visualizer_hw" path="libqcomvisualizer.so"/>
         <library name="downmix" path="libdownmix.so"/>
