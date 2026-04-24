@@ -250,6 +250,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch-service.yoshino
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb
