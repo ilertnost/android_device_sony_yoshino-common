@@ -1,0 +1,2 @@
+# Allow sensors to access tad
+unix_socket_connect(sensors, tad, tad)
