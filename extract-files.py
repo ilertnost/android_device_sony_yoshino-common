@@ -72,6 +72,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/etc/init/init.sony.idd.rc': blob_fixup()
         .regex_replace('restorecon_recursive --force', 'restorecon_recursive'),
+    'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
     'vendor/lib/libznr.so': blob_fixup()
         .add_needed('liblog.so'),
     ('vendor/lib/vendor.semc.hardware.light@1.0.so', 'vendor/lib/vendor.semc.system.idd@1.0.so',
