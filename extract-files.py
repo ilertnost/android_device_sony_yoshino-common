@@ -72,6 +72,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/etc/init/init.sony.idd.rc': blob_fixup()
         .regex_replace('restorecon_recursive --force', 'restorecon_recursive'),
+    'vendor/etc/msm_irqbalance.conf': blob_fixup()
+        .regex_replace('IGNORED_IRQ=19,22,39,200,203\n', 'IGNORED_IRQ=2,19,22,39,200,203,332\n'),
     'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
         .clear_symbol_version('__aeabi_memcpy')
         .clear_symbol_version('__aeabi_memset')

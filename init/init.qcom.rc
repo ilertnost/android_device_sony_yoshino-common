@@ -765,3 +765,10 @@ service vendor.wvkbd_installer /vendor/bin/wvkbd
     user system
     group system
     oneshot
+
+on property:vendor.post_boot.parsed=1
+    # IRQ Tuning
+    # IRQ 502: mdss
+    # IRQ 202: kgsl_3d0
+    write /proc/irq/502/smp_affinity_list 7
+    write /proc/irq/202/smp_affinity_list 6
