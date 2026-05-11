@@ -70,8 +70,15 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib/libsomc_topporsc.so', 'vendor/lib/libsomc_yummyrsc.so', 'vendor/lib/libsony_fooddetect.so',
      'vendor/lib/libsony_naruto.so', 'vendor/lib/libvideobokeh.so'): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
+    'vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc': blob_fixup()
+        .regex_replace('writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
     'vendor/etc/init/init.sony.idd.rc': blob_fixup()
-        .regex_replace('restorecon_recursive --force', 'restorecon_recursive'),
+        .regex_replace('restorecon_recursive --force', 'restorecon_recursive')
+        .regex_replace('writepid /dev/cpuset/system-background/tasks', 'task_profiles ServiceCapacityLow'),
+    'vendor/etc/init/vendor.semc.system.idd@1.0-service.rc': blob_fixup()
+        .regex_replace('writepid /dev/cpuset/system-background/tasks', 'task_profiles ServiceCapacityLow'),
+    'vendor/etc/init/vendor.somc.hardware.camera.provider@1.0-service.rc': blob_fixup()
+        .regex_replace('writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks', 'task_profiles CameraServiceCapacity MaxPerformance'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=19,22,39,200,203\n', 'IGNORED_IRQ=2,19,22,39,200,203,332\n'),
     'vendor/lib/libmmcamera_faceproc.so': blob_fixup()

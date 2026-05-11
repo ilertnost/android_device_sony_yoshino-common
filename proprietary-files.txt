@@ -664,7 +664,7 @@ vendor/firmware/ipa_fws.mdt
 
 # IRQ balance - from mermaid - 53.1.A.3.105
 vendor/bin/msm_irqbalance|0e967f5c7eaf8d863a50996459101be47adf96a2
-vendor/etc/msm_irqbalance.conf|83b18f58c3a5bad615972fb5dca4f84dff82787e
+vendor/etc/msm_irqbalance.conf|83b18f58c3a5bad615972fb5dca4f84dff82787e|3a6df5f52bb0c6792a9c23e598476c13e153d7e8
 
 # Keylayout
 system/usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
@@ -1054,7 +1054,7 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|182440c6d1f9dde20ee12420ec63191
 # Widevine - from mermaid - 53.1.A.3.105
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|a7e7339f293378ea817afd296c3d13ddead8ff26|fc988e2501843f08a9bf3d7ef9c5ec4252d35e77
 vendor/bin/wvkbd|ec49f1451bbf19723d47aeb8b636d1a5fdda6fdf
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|366f63ab5c5e296f81ad357c77f5973563115801
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|366f63ab5c5e296f81ad357c77f5973563115801|6176af6760e3a8b136b6b2355eb946ec31348d64
 vendor/lib/libhdcprx_module.so|1d2c71d72d4f9dca515d4d5a648c9961394d1b97
 vendor/lib/libhdcptx_module.so|a520423a7add6dd84a188305a83d096d060651bd
 vendor/lib/liboemcrypto.so|1ebe2411ede49806fb131c10af5f1dd5900dbf99
