@@ -24,6 +24,10 @@ allow modem-switcher hal_modemswitcher_hwservice:hwservice_manager find;
 # Allow modem-switcher to find hidl_memory
 allow modem-switcher hidl_memory_hwservice:hwservice_manager find;
 
+# Allow modem-switcher to read/write in /data/vendor/
+allow modem-switcher vendor_data_file:dir rw_dir_perms;
+allow modem-switcher vendor_data_file:file create_file_perms;
+
 # Allow modem-switcher to read files in /oem
 r_dir_file(modem-switcher, oemfs)
 

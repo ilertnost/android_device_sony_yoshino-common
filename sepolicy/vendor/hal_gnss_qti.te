@@ -1,0 +1,6 @@
+# Allow hal_gnss_qti to search oemfs
+allow hal_gnss_qti oemfs:dir search;
+
+# Allow hal_gnss_qti to write to /data/vendor/location
+allow hal_gnss_qti location_data_file:dir rw_dir_perms;
+allow hal_gnss_qti location_data_file:file create_file_perms;
