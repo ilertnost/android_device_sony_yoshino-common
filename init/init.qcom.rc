@@ -137,6 +137,9 @@ on init
     write /sys/bus/msm_subsys/devices/subsys5/restart_level RELATED
     write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
 
+    # Change permissions for /dev/diag
+    chmod 0666 /dev/diag
+
 on fs
     # Start HW service manager early
     start hwservicemanager
