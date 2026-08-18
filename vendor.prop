@@ -1,3 +1,6 @@
+# eBPF
+ro.bpf.kver_override=5.4.299
+
 # Audio
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
@@ -79,6 +82,9 @@ ro.vendor.use_data_netmgrd=true
 # Display
 debug.gralloc.gfx_ubwc_disable=0
 ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.supports_background_blur=1
+debug.renderengine.backend=skiaglthreaded
+debug.renderengine.blur_algorithm=kawase2
 
 # DRM
 drm.service.enabled=true
