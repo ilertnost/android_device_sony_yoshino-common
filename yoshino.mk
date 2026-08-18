@@ -8,7 +8,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
+# Kernel 4.4 predates VINTF kernel FCM requirements
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Audio
 PRODUCT_PACKAGES += \
