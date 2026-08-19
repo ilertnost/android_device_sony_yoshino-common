@@ -1,0 +1,16 @@
+cc_library_shared {
+    name: "libsonypiecompat",
+    compile_multilib: "both",
+    srcs: [
+        "pie_compat.cpp",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    shared_libs: [
+        "libgui",
+        "libutils",
+        "libbinder",
+    ],
+}

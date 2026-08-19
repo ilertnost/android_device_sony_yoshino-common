@@ -1,0 +1,7 @@
+cc_library_shared {
+    name: "libcacaoreffix",
+    compile_multilib: "32",
+    srcs: ["reffix.cpp"],
+    shared_libs: ["libdl", "liblog"],
+    cflags: ["-Wall", "-Werror"],
+}
