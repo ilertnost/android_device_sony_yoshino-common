@@ -151,7 +151,7 @@ on fs
 
     # Start trim area daemon
     wait /dev/block/sda1
-    chown oem_2997 oem_2997 /dev/block/sda1
+    chown vendor_tad vendor_tad /dev/block/sda1
     chmod 0770 /dev/block/sda1
     class_start trimarea
     start vendor.tad
@@ -447,26 +447,26 @@ on post-fs-data
     mkdir /data/vendor/camera 0770 cameraserver camera
 
     # Qnovo
-    mkdir /mnt/qns 0750 oem_2985 oem_2985
+    mkdir /mnt/qns 0750 vendor_qns vendor_qns
     wait /dev/block/bootdevice/by-name/Qnovo
     mount_all /vendor/etc/qns.fstab
-    chown oem_2985 oem_2985 /mnt/qns
+    chown vendor_qns vendor_qns /mnt/qns
     chmod 0750 /mnt/qns
     restorecon_recursive /mnt/qns
 
-    chown oem_2985 oem_2985 /sys/class/qns
-    chown oem_2985 oem_2985 /sys/class/qns/alarm
-    chown oem_2985 oem_2985 /sys/class/qns/charge_current
-    chown oem_2985 oem_2985 /sys/class/qns/charge_voltage
-    chown oem_2985 oem_2985 /sys/class/qns/charging_state
-    chown oem_2985 oem_2985 /sys/class/qns/current_now
-    chown oem_2985 oem_2985 /sys/class/qns/design
-    chown oem_2985 oem_2985 /sys/class/qns/fcc
-    chown oem_2985 oem_2985 /sys/class/qns/options
-    chown oem_2985 oem_2985 /sys/class/qns/soc
-    chown oem_2985 oem_2985 /sys/class/qns/temp
-    chown oem_2985 oem_2985 /sys/class/qns/voltage
-    chown oem_2985 oem_2985 /sys/class/qns/battery_type
+    chown vendor_qns vendor_qns /sys/class/qns
+    chown vendor_qns vendor_qns /sys/class/qns/alarm
+    chown vendor_qns vendor_qns /sys/class/qns/charge_current
+    chown vendor_qns vendor_qns /sys/class/qns/charge_voltage
+    chown vendor_qns vendor_qns /sys/class/qns/charging_state
+    chown vendor_qns vendor_qns /sys/class/qns/current_now
+    chown vendor_qns vendor_qns /sys/class/qns/design
+    chown vendor_qns vendor_qns /sys/class/qns/fcc
+    chown vendor_qns vendor_qns /sys/class/qns/options
+    chown vendor_qns vendor_qns /sys/class/qns/soc
+    chown vendor_qns vendor_qns /sys/class/qns/temp
+    chown vendor_qns vendor_qns /sys/class/qns/voltage
+    chown vendor_qns vendor_qns /sys/class/qns/battery_type
 
     start vendor.qns
 
@@ -522,26 +522,26 @@ on property:sys.boot_completed=1
 
 on charger
     # Qnovo
-    mkdir /mnt/qns 0750 oem_2985 oem_2985
+    mkdir /mnt/qns 0750 vendor_qns vendor_qns
     wait /dev/block/bootdevice/by-name/Qnovo
     mount_all /vendor/etc/qns.fstab
-    chown oem_2985 oem_2985 /mnt/qns
+    chown vendor_qns vendor_qns /mnt/qns
     chmod 0750 /mnt/qns
     restorecon_recursive /mnt/qns
 
-    chown oem_2985 oem_2985 /sys/class/qns
-    chown oem_2985 oem_2985 /sys/class/qns/alarm
-    chown oem_2985 oem_2985 /sys/class/qns/charge_current
-    chown oem_2985 oem_2985 /sys/class/qns/charge_voltage
-    chown oem_2985 oem_2985 /sys/class/qns/charging_state
-    chown oem_2985 oem_2985 /sys/class/qns/current_now
-    chown oem_2985 oem_2985 /sys/class/qns/design
-    chown oem_2985 oem_2985 /sys/class/qns/fcc
-    chown oem_2985 oem_2985 /sys/class/qns/options
-    chown oem_2985 oem_2985 /sys/class/qns/soc
-    chown oem_2985 oem_2985 /sys/class/qns/temp
-    chown oem_2985 oem_2985 /sys/class/qns/voltage
-    chown oem_2985 oem_2985 /sys/class/qns/battery_type
+    chown vendor_qns vendor_qns /sys/class/qns
+    chown vendor_qns vendor_qns /sys/class/qns/alarm
+    chown vendor_qns vendor_qns /sys/class/qns/charge_current
+    chown vendor_qns vendor_qns /sys/class/qns/charge_voltage
+    chown vendor_qns vendor_qns /sys/class/qns/charging_state
+    chown vendor_qns vendor_qns /sys/class/qns/current_now
+    chown vendor_qns vendor_qns /sys/class/qns/design
+    chown vendor_qns vendor_qns /sys/class/qns/fcc
+    chown vendor_qns vendor_qns /sys/class/qns/options
+    chown vendor_qns vendor_qns /sys/class/qns/soc
+    chown vendor_qns vendor_qns /sys/class/qns/temp
+    chown vendor_qns vendor_qns /sys/class/qns/voltage
+    chown vendor_qns vendor_qns /sys/class/qns/battery_type
 
     # Enable UFS powersaving
     write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
@@ -593,7 +593,7 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     class hal
     user audioserver
     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
-    group audio camera context_hub drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock system
+    group audio camera context_hub drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct vendor_qti_diag wakelock system
     capabilities BLOCK_SUSPEND SYS_NICE
     # setting RLIMIT_RTPRIO allows binder RT priority inheritance
     rlimit rtprio 10 10
@@ -636,7 +636,7 @@ service vendor.mlid /vendor/bin/mlid
 service vendor.modem_switcher vendor/bin/sony-modem-switcher
     class main
     user root
-    group root system oem_2993 cache
+    group root system vendor_trimarea cache
     disabled
     oneshot
 
@@ -723,9 +723,9 @@ on property:persist.vendor.somc.cust.modem1=*
     setprop persist.somc.cust.modem1 ${persist.vendor.somc.cust.modem1}
 
 service vendor.qns /vendor/bin/qns -d /mnt/qns -l /mnt/qns
-    user oem_2985
-    group oem_2985
-    socket qnsbsd stream 660 oem_2985 system
+    user vendor_qns
+    group vendor_qns
+    socket qnsbsd stream 660 vendor_qns system
     disabled
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
@@ -747,9 +747,9 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     task_profiles ServiceCapacityLow
 
 service vendor.tad /vendor/bin/tad /dev/block/bootdevice/by-name/TA 0,16
-    user oem_2997
-    group oem_2997 root
-    socket tad stream 0660 system oem_2993
+    user vendor_tad
+    group vendor_tad root
+    socket tad stream 0660 system vendor_trimarea
     class trimarea
     seclabel u:r:tad:s0
 
@@ -760,7 +760,7 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
-    group root oem_2993 oem_2929
+    group root vendor_trimarea vendor_qtr
     task_profiles ServiceCapacityLow
 
 service vendor.wvkbd_installer /vendor/bin/wvkbd
